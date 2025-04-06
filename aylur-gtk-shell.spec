@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:       ags
 Version:    2.3.0
 Release:    1
@@ -12,13 +14,11 @@ BuildRequires:  go
 BuildRequires:  pkgconfig(astal-gjs)
 
 Requires:       astal-gjs
-Requires:       astal-libs
+Requires:       lib64astal-libs
 Requires:       pkgconfig(gtk4-layer-shell-0)
 
-Supplements:    astal-gtk3
-Recommends:     astal-gtk4
-
-Provides:       aylur-gtk-shell
+Supplements:    lib64astal-gtk3
+Recommends:     lib64astal-gtk4
 
 %description
 %summary
@@ -38,7 +38,3 @@ install -m 0755 -vp %{builddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %{_bindir}/ags
-
-
-
-
