@@ -2,7 +2,7 @@
 
 Name:       ags
 Version:    2.3.0
-Release:    1
+Release:    2
 URL:		https://github.com/aylur/ags
 Source0:	%{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:    ags-2.3.0-vendor.tar.gz
