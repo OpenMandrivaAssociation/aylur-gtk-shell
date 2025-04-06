@@ -20,6 +20,8 @@ Requires:       pkgconfig(gtk4-layer-shell-0)
 Supplements:    astal3
 Recommends:     astal4
 
+Provides:       aylur-gtk-shell
+
 %description
 %summary
 
