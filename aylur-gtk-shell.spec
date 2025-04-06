@@ -14,11 +14,11 @@ BuildRequires:  go
 BuildRequires:  pkgconfig(astal-gjs)
 
 Requires:       astal-gjs
-Requires:       lib64astal-libs
+Requires:       astal-libs
 Requires:       pkgconfig(gtk4-layer-shell-0)
 
-Supplements:    lib64astal-gtk3
-Recommends:     lib64astal-gtk4
+Supplements:    astal3
+Recommends:     astal4
 
 %description
 %summary
