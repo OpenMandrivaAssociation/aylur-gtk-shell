@@ -24,7 +24,7 @@ Recommends:     astal4
 %summary
 
 %prep
-%autosetup -m ags-%{version} -p1
+%autosetup -n ags-%{version} -p1
 tar -xzf %{SOURCE1}
 
 %build
