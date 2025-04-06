@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-Name:       ags
+Name:       aylur-gtk-shell
 Version:    2.3.0
 Release:    2
 URL:		https://github.com/aylur/ags
@@ -20,13 +20,11 @@ Requires:       pkgconfig(gtk4-layer-shell-0)
 Supplements:    astal3
 Recommends:     astal4
 
-Provides:       aylur-gtk-shell
-
 %description
 %summary
 
 %prep
-%autosetup -p1
+%autosetup -m ags-%{version} -p1
 tar -xzf %{SOURCE1}
 
 %build
