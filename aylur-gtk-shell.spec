@@ -4,7 +4,7 @@ Name:       aylur-gtk-shell
 Version:    2.3.0
 Release:    2
 URL:		https://github.com/aylur/ags
-Source0:	%{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:	%{url}/archive/v%{version}/ags-%{version}.tar.gz
 Source1:    ags-2.3.0-vendor.tar.gz
 Summary:    Building blocks for creating custom desktop shells
 License:    LGPL-2.1-only
