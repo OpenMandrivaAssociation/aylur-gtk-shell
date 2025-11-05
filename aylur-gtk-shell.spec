@@ -14,6 +14,7 @@ BuildRequires:	meson
 BuildRequires:  go
 BuildRequires:  pkgconfig(astal-gjs)
 BuildRequires:	pkgconfig(gjs-1.0)
+BuildRequires:	gjs
 
 Requires:       astal-gjs
 Requires:       astal-libs
