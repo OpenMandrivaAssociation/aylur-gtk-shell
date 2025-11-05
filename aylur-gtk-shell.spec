@@ -1,17 +1,19 @@
 %global debug_package %{nil}
 
 Name:       aylur-gtk-shell
-Version:    2.3.0
-Release:    2
+Version:    3.0.0
+Release:    1
 URL:		https://github.com/aylur/ags
 Source0:	%{url}/archive/v%{version}/ags-%{version}.tar.gz
-Source1:    ags-2.3.0-vendor.tar.gz
+Source1:    ags-%{version}-vendor.tar.gz
 Summary:    Building blocks for creating custom desktop shells
 License:    LGPL-2.1-only
 Group:      Graphical desktop/ Other
 
+BuildRequires:	meson
 BuildRequires:  go
 BuildRequires:  pkgconfig(astal-gjs)
+BuildRequires:	pkgconfig(gjs-1.0)
 
 Requires:       astal-gjs
 Requires:       astal-libs
@@ -25,16 +27,16 @@ Recommends:     astal4
 
 %prep
 %autosetup -n ags-%{version} -p1
-tar -xzf %{SOURCE1}
+tar -xzf %{SOURCE1} -C cli
 
 %build
-%define currentgoldflags %{shrink:-X ags/main.gtk4LayerShell=/usr/lib64/libgtk4-layer-shell.so.0
-                          -X ags/main.astalGjs=$(pkg-config --variable=srcdir astal-gjs)}
-go build -o %{builddir}/bin/ags ags
+export GOFLAGS="-buildmode=pie"
+%meson
+%meson_build
 
 %install
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{builddir}/bin/* %{buildroot}%{_bindir}/
+%meson_install
 
 %files
 %{_bindir}/ags
+%{_datadir}/ags
