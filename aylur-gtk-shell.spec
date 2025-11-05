@@ -2,10 +2,11 @@
 
 Name:       aylur-gtk-shell
 Version:    3.0.0
-Release:    1
+Release:    2
 URL:		https://github.com/aylur/ags
 Source0:	%{url}/archive/v%{version}/ags-%{version}.tar.gz
 Source1:    ags-%{version}-vendor.tar.gz
+Source2:    ags-pnpm-offline-cache.tar.gz
 Summary:    Building blocks for creating custom desktop shells
 License:    LGPL-2.1-only
 Group:      Graphical desktop/ Other
@@ -15,6 +16,7 @@ BuildRequires:  go
 BuildRequires:  pkgconfig(astal-gjs)
 BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:	gjs
+BuildRequires:  pnpm
 
 Requires:       astal-gjs
 Requires:       astal-libs
@@ -29,9 +31,10 @@ Recommends:     astal4
 %prep
 %autosetup -n ags-%{version} -p1
 tar -xzf %{SOURCE1} -C cli
-
+tar -zxf %{S:2}
 %build
-export GOFLAGS="-buildmode=pie"
+pnpm install --offline --force
+export GOFLAGS="-buildmode=pie -ldflags=-linkmode=external"
 %meson
 %meson_build
 

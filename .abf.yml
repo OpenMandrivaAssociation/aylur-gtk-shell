@@ -1,3 +1,4 @@
 sources:
   ags-3.0.0.tar.gz: ce5349745d79d3d9defebd18002e068716ccec85
   ags-3.0.0-vendor.tar.gz: f6ca6fae4ed2f0de5701be974b15b924807a24c5
+  ags-pnpm-offline-cache.tar.gz: 3a059e74c121237190613ca77f5d330ff99e8d15
