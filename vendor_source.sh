@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Change folder to correct name
-cd ags-3.0.0
+cd ags-3.1.1
 
 cat > .npmrc <<'EOF'
 node-linker=hoisted

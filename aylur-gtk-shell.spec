@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       aylur-gtk-shell
-Version:    3.1.0
+Version:    3.1.1
 Release:    1
 URL:		https://github.com/aylur/ags
 Source0:	%{url}/archive/v%{version}/ags-%{version}.tar.gz
